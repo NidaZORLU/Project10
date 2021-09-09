@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+//Mixins
+@mixin centerFlex{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@mixin borderRadius($par){
+  border-radius: $par;
+  -webkit-transition: $par;
+  -moz-transition: $par;
+  -o-transition: $par;
+}
+//color
+$bg-color-1 : #fff;
+$bg-color-2:#686de0;
+$bg-color-3: rgba(0, 0, 0, 0.1);
+$bg-color-4: #9f68e0;
+
+body {
+  background-color: $bg-color-2;
+  font-family: 'Roboto', sans-serif;
+  @include centerFlex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+  padding: 20px;
+}
+
+.container {
+  background-color: $bg-color-1;
+  @include borderRadius(10px);
+  box-shadow: 0 10px 20px $bg-color-3, 0 6px 6px $bg-color-3;
+  padding: 50px 20px;
+  text-align: center;
+  max-width: 100%;
+  width: 800px;
+}
+
+h3 {
+  margin: 0;
+  opacity: 0.5;
+  letter-spacing: 2px;
+}
+
+.joke {
+  font-size: 30px;
+  letter-spacing: 1px;
+  line-height: 40px;
+  margin: 50px auto;
+  max-width: 600px;
+}
+
+.btn {
+  background-color: $bg-color-4;
+  color: $bg-color-1;
+  border: 0;
+  @include borderRadius(10px);
+  box-shadow: 0 5px 15px $bg-color-3, 0 6px 6px $bg-color-3;
+  padding: 14px 40px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn:focus {
+  outline: 0;
+}
